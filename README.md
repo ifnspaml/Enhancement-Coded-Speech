@@ -1,12 +1,12 @@
 # Enhancement-Coded-Speech
 
-Please find the scripts referring to the paper "Convolutional Neural Networks to Enhance Coded Speech". We here provide the cepstral domain approach with the frame structure III. 
+Please find here the scripts referring to the paper "Convolutional Neural Networks to Enhance Coded Speech". In this repository we provide the cepstral domain approach with the framing structure III. 
 
 The code was written by Ziyue Zhao and Huijun Liu. 
 
 ## Introduction
 
-A approach based on a convolutional neural network (CNN) is proposed to enhance coded (i.e., encoded and decoded) speech with the utilization of the cepstral domain features. The enhanced coded speech can achieve improved quality without modifing the codec (i.e., encoder and decoder) itself.
+An approach based on a convolutional neural network (CNN) is proposed to enhance coded (i.e., encoded and decoded) speech by utilizing cepstral domain features. The quality of coded speech can be enhanced and thus achieves improved quality without modifing the codec (i.e., encoder and decoder) itself.
 
 ## Prerequisites
 
