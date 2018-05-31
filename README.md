@@ -70,7 +70,7 @@ If you use the scripts in your research, please cite
 @article{cnn2codedspeech,
   author =  {Z. Zhao and H. Liu and T. Fingscheidt},
   title =   {{Convolutional Neural Networks to Enhance Coded Speech}},
-  howpublished = {\url{https://github.com/ZiyueZhao/coded_speech_enhance}}
+  howpublished = {\url{https://github.com/ifnspaml/Enhancement-Coded-Speech}}
 }
 ```
 
