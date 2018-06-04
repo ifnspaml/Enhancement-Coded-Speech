@@ -1,11 +1,11 @@
-%%% Original (uncoded) speech loading, preprocessing, and en- & de-coding%%
-%%% Input: 
-%%%       1- Original (uncoded) speech example at 16KHz: exapmle_s_16k.raw%
-%%%       2- ITU-T G.191 compiled programs: 
-%%%          filter.exe, sv56demo.exe, and g711demo.exe                 %%%
-%%% Output: 
-%%%       1- Coded speech  at 8 KHz: exapmle_s_g711_coded.raw           %%%
-%%%       2- Unoded speech at 8 KHz: exapmle_s_uncoded.raw              %%%
+%   Original (uncoded) speech loading, preprocessing, and en- & de-coding %
+%   Input:  
+%         1- Original (uncoded) speech example at 16KHz: exapmle_s_16k.raw% 
+%         2- ITU-T G.191 compiled programs:  
+%            filter.exe, sv56demo.exe, and g711demo.exe                   % 
+%   Output:  
+%         1- Coded speech  at 8 KHz: exapmle_s_g711_coded.raw             % 
+%         2- Unoded speech at 8 KHz: exapmle_s_uncoded.raw                % 
 
 clear; clc; 
 
