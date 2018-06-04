@@ -13,7 +13,7 @@
 
 clear; clc; 
 addpath(genpath(pwd));
-%%  1- Parameters setting;
+%   1- Parameters setting;
 
 % Framestructure parameters
 frameLen = 0.032 * 8000; % 32ms @ NB
@@ -24,7 +24,7 @@ K_fft = frameLen * 2; % NOT for prime Types
 % Load mean and std values from training
 mean_std_file = './data/mean_std_of_TrainData_g711_best.mat';
 
-%% 2- Coded speech loading, cepstral domain, and CNN input prepare
+%  2- Coded speech loading, cepstral domain, and CNN input prepare
 % - Load coded speech 
 legacy_dec_out = loadshort('./dataset/exapmle_s_g711_coded.raw');
 s_leng = length(legacy_dec_out);
