@@ -70,10 +70,12 @@ If you use the scripts in your research, please cite
 @article{cnn2codedspeech,
   author =  {Z. Zhao and H. Liu and T. Fingscheidt},
   title =   {{Convolutional Neural Networks to Enhance Coded Speech}},
-  howpublished = {\url{https://github.com/ifnspaml/Enhancement-Coded-Speech}}
+  howpublished = {\url{https://github.com/ifnspaml/Enhancement-Coded-Speech}},
+  year = {2018},
+  month = {May}
 }
 ```
 
 ## Acknowledgements
 - The CNN topology used here is a deep encoder-decoder network, which is motivated from [Image Restoration Using Very Deep Convolutional Encoder-Decoder Networks with Symmetric Skip Connections](https://arxiv.org/abs/1603.09056).
-- The authors would like to thank Samy Elshamy for the advice concerning the construction of the project in Github.
+- The authors would like to thank Samy Elshamy, Jonas Löhdefink, and Jan-Aike Bolte for the advice concerning the construction of the project in Github.
