@@ -1,12 +1,12 @@
-%%% Waveform reconstruction for cepstral domain approach with framework %%%
-%%% structure III                                                       %%%
-%%% Input: 
-%%%       1- CNN output vector: type_3_cnn_output_ceps.mat              %%%
-%%%       2- Residual cepstral coefficients vector: type_3_ceps_resi.mat%%%
-%%%       3- Phase angel vector: type_3_pha_ang.mat                     %%%
-%%%       4- Coded speech: exapmle_s_g711_coded.raw                     %%%
-%%% Output: 
-%%%       1- Postprocessed waveform: cnn_postprocessed_8K_out.raw       %%%
+%   Waveform reconstruction for cepstral domain approach with framework   %
+%   structure III                                                         %
+%   Input: 
+%         1- CNN output vector: type_3_cnn_output_ceps.mat                %
+%         2- Residual cepstral coefficients vector: type_3_ceps_resi.mat  %
+%         3- Phase angel vector: type_3_pha_ang.mat                       %
+%         4- Coded speech: exapmle_s_g711_coded.raw                       %
+%   Output: 
+%         1- Postprocessed waveform: cnn_postprocessed_8K_out.raw         %
 
 clear; clc;
 addpath(genpath(pwd));
