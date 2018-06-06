@@ -1,18 +1,18 @@
-%%% Prepare of training (or validation) data for CNN for cepstral       %%%
-%%% domain approach III.                                                %%%
-%%%                                                                     %%%
-%%% Input: 
-%%%       1- Uncoded speech for training: example_uncoded_train_s.raw   %%%
-%%%       2- Uncoded speech for validation: example_uncoded_valid_s.raw %%%
-%%%       3- Coded speech for training: example_coded_train_s.raw       %%%
-%%%       4- Coded speech for validation: example_coded_valid_s.raw     %%%
-%%% Output: 
-%%%       1- Training input: Train_inputSet_g711.mat                    %%%
-%%%       2- Training target: Train_targetSet_g711.mat                  %%%
-%%%       3- Validation input: Validation_inputSet_g711.mat             %%%
-%%%       4- Validation target: Validation_targetSet_g711.mat           %%%
-%%%       5- Mean and variance of training data:                        %%%
-%%%          mean_std_of_TrainData_g711_example.mat                     %%%
+%   Prepare of training (or validation) data for CNN for cepstral         %
+%   domain approach III.                                                  %
+%                                                                         %
+%   Input: 
+%         1- Uncoded speech for training: example_uncoded_train_s.raw     %
+%         2- Uncoded speech for validation: example_uncoded_valid_s.raw   %
+%         3- Coded speech for training: example_coded_train_s.raw         %
+%         4- Coded speech for validation: example_coded_valid_s.raw       %
+%   Output: 
+%         1- Training input: Train_inputSet_g711.mat                      %
+%         2- Training target: Train_targetSet_g711.mat                    %
+%         3- Validation input: Validation_inputSet_g711.mat               %
+%         4- Validation target: Validation_targetSet_g711.mat             %
+%         5- Mean and variance of training data:                          %
+%            mean_std_of_TrainData_g711_example.mat                       %
 
 clear; clc;
 addpath(genpath(pwd));

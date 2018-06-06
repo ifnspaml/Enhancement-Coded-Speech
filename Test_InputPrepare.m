@@ -1,19 +1,19 @@
-%%% Prepare the CNN inputs and 2 more vectors for cepstral domain       %%%
-%%% approach III.                                                       %%%
-%%% Input: 
-%%%       1- Mean and variance of training data:                        %%%
-%%%          mean_std_of_TrainData_g711_best.mat                             %%%
-%%%       2- Coded speech for test: exapmle_s_g711_coded.raw            %%%
-%%% Output: 
-%%%       1- CNN input vector: type_3_cnn_input_ceps_v73.mat            %%%
-%%%       2- Residual cepstral coefficients vector: type_3_ceps_resi.mat%%%
-%%%       3- Phase angel vector: type_3_pha_ang.mat                     %%%
+%   Prepare the CNN inputs and 2 more vectors for cepstral domain         %
+%   approach III.                                                         %
+%   Input: 
+%         1- Mean and variance of training data:                          %
+%            mean_std_of_TrainData_g711_best.mat                          %
+%         2- Coded speech for test: exapmle_s_g711_coded.raw              %
+%   Output: 
+%         1- CNN input vector: type_3_cnn_input_ceps_v73.mat              %
+%         2- Residual cepstral coefficients vector: type_3_ceps_resi.mat  %
+%         3- Phase angel vector: type_3_pha_ang.mat                       %
 
 
 
 clear; clc; 
 addpath(genpath(pwd));
-%%  1- Parameters setting;
+%   1- Parameters setting;
 
 % Framestructure parameters
 frameLen = 0.032 * 8000; % 32ms @ NB
@@ -24,7 +24,7 @@ K_fft = frameLen * 2; % NOT for prime Types
 % Load mean and std values from training
 mean_std_file = './data/mean_std_of_TrainData_g711_best.mat';
 
-%% 2- Coded speech loading, cepstral domain, and CNN input prepare
+%  2- Coded speech loading, cepstral domain, and CNN input prepare
 % - Load coded speech 
 legacy_dec_out = loadshort('./dataset/exapmle_s_g711_coded.raw');
 s_leng = length(legacy_dec_out);
