@@ -1,6 +1,6 @@
 # Enhancement-Coded-Speech
 
-Please find here the scripts referring to the paper "Convolutional Neural Networks to Enhance Coded Speech". In this repository we provide the cepstral domain approach with the framing structure III. 
+Please find here the scripts referring to the paper [Convolutional Neural Networks to Enhance Coded Speech](https://arxiv.org/abs/1806.09411). In this repository we provide the cepstral domain approach with the framework structure III. 
 
 The code was written by Ziyue Zhao and Huijun Liu. 
 
@@ -67,12 +67,19 @@ matlab CodedSpeech_Obtain.m.
 If you use the scripts in your research, please cite
 
 ```
+@article{zhao2018convolutional,
+  author =  {Z. Zhao and H. Liu and T. Fingscheidt},
+  title =   {{Convolutional Neural Networks to Enhance Coded Speech}},
+  journal = {arXiv preprint arXiv:1806.09411},
+  year =    {2018},
+  month =   jun
+}
 @article{cnn2codedspeech,
   author =  {Z. Zhao and H. Liu and T. Fingscheidt},
   title =   {{Convolutional Neural Networks to Enhance Coded Speech}},
   howpublished = {\url{https://github.com/ifnspaml/Enhancement-Coded-Speech}},
-  year = {2018},
-  month = {May}
+  year =    {2018},
+  month =   jun
 }
 ```
 
