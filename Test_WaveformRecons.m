@@ -4,7 +4,8 @@
 %         1- CNN output vector: type_3_cnn_output_ceps.mat                %
 %         2- Residual cepstral coefficients vector: type_3_ceps_resi.mat  %
 %         3- Phase angel vector: type_3_pha_ang.mat                       %
-%         4- Coded speech: exapmle_s_g711_coded.raw                       %
+%         4- Coded speech: exapmle_s1_g711_coded.raw and                  %
+%            exapmle_s2_g711_coded.raw                                    %
 %   Output: 
 %         1- Postprocessed waveform: cnn_postprocessed_8K_out.raw         %
 
@@ -54,7 +55,7 @@ for k = 1 : size(predictions,1), % num. of frames
 end
 
 % - Abandon/add last few samples if needed
-legacy_dec_out = loadshort('./dataset/exapmle_s_g711_coded.raw');
+legacy_dec_out = loadshort('./dataset/example_s1_g711_coded_cnn_proc.raw'); % also: example_s2_g711_coded_cnn_proc.raw
 if length(s_rec_vec) > length(legacy_dec_out),
     s_rec_vec = ...
         s_rec_vec(1:length(legacy_dec_out));
