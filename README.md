@@ -23,7 +23,8 @@ An approach based on a convolutional neural network (CNN) is proposed to enhance
 
 ### Testing with the provided CNN model
 
-- An example (the original speech sample is from the [ITU-T test signals](https://www.itu.int/net/itu-t/sigdb/genaudio/AudioForm-g.aspx?val=1000050) of American English) for the G.711-coded speech is included in the `dataset` folder
+- Two example files: example_s1_g711_coded.raw and example_s2_g711_coded.raw (the original speech samples are from the [ITU-T test signals](https://www.itu.int/net/itu-t/sigdb/genaudio/AudioForm-g.aspx?val=1000050) of American English) for the G.711-coded speech are included in the `dataset` folder
+- Please note that the two example files are split from the file named A_eng_f5.wav in the ITU-T test signals dataset and the splitting point is at 7.0812 s.
 - Run the Matlab script to prepare the input data for the CNN model, with G.711-coded speech sample `./dataset/exapmle_s_g711_coded.raw` and the means and standard variances from the training data `./data/mean_std_of_TrainData_g711_best.mat`, outputting the CNN input data `./data/type_3_cnn_input_ceps_v73.mat`, residual cepstral coefficients `./data/type_3_ceps_resi.mat`, and the phase angel vector `./data/type_3_pha_ang.mat`:
 ```bash
 matlab Test_InputPrepare.m
@@ -32,7 +33,7 @@ matlab Test_InputPrepare.m
 ```bash
 python CepsDomCNN_Test.py
 ```
-- Run the Matlab script to obtain the final enhanced speech, with the CNN output data `./data/type_3_cnn_output_ceps.mat`, residual cepstral coefficients `./data/type_3_ceps_resi.mat`, the phase angel vector `./data/type_3_pha_ang.mat`, and G.711-coded speech sample `./dataset/exapmle_s_g711_coded.raw`, outputting the enhanced speech waveform `./dataset/cnn_postprocessed_8K_out.raw`:
+- Run the Matlab script to obtain the final enhanced speech, with the CNN output data `./data/type_3_cnn_output_ceps.mat`, residual cepstral coefficients `./data/type_3_ceps_resi.mat`, the phase angel vector `./data/type_3_pha_ang.mat`, and G.711-coded speech sample `./dataset/exapmle_s_g711_coded.raw`, outputting the enhanced speech waveform `./dataset/example_s1_g711_coded_cnn_proc.raw` or `./dataset/example_s2_g711_coded_cnn_proc.raw`:
 ```bash
 matlab Test_WaveformRecons.m
 ```
