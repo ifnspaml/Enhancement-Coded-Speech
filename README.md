@@ -68,12 +68,15 @@ matlab CodedSpeech_Obtain.m.
 If you use the scripts in your research, please cite
 
 ```
-@article{zhao2018convolutional,
+@article{zhao2019convolutional,
   author =  {Z. Zhao and H. Liu and T. Fingscheidt},
-  title =   {{Convolutional Neural Networks to Enhance Coded Speech}},
-  journal = {arXiv preprint arXiv:1806.09411},
-  year =    {2018},
-  month =   jun
+  title = {{Convolutional Neural Networks to Enhance Coded Speech}},
+  journal = {IEEE/ACM Transactions on Audio, Speech, and Language Processing},
+  year = {2018},
+  month = april,
+  volume = {27}, 
+  number = {4},
+  pages = {663-678}
 }
 @article{cnn2codedspeech,
   author =  {Z. Zhao and H. Liu and T. Fingscheidt},
