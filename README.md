@@ -69,10 +69,10 @@ If you use the scripts in your research, please cite
 
 ```
 @article{zhao2019convolutional,
-  author =  {Z. Zhao and H. Liu and T. Fingscheidt},
+  author = {Z. Zhao and H. Liu and T. Fingscheidt},
   title = {{Convolutional Neural Networks to Enhance Coded Speech}},
   journal = {IEEE/ACM Transactions on Audio, Speech, and Language Processing},
-  year = {2018},
+  year = {2019},
   month = april,
   volume = {27}, 
   number = {4},
