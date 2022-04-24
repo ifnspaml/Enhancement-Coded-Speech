@@ -27,7 +27,7 @@ mean_std_file = './data/mean_std_of_TrainData_g711_best.mat';
 
 %  2- Coded speech loading, cepstral domain, and CNN input prepare
 % - Load coded speech 
-legacy_dec_out = loadshort('./dataset/exapmle_s1_g711_coded.raw'); % also: exapmle_s2_g711_coded.raw
+legacy_dec_out = loadshort('./dataset/example_s1_g711_coded.raw'); % also: example_s2_g711_coded.raw
 s_leng = length(legacy_dec_out);
 legacy_dec_out = (legacy_dec_out./2^15); % make signal within[-1,+1]
 

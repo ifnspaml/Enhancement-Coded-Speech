@@ -4,22 +4,23 @@ Please find here the scripts referring to the paper [Convolutional Neural Networ
 
 The code was written by Ziyue Zhao and Huijun Liu. 
 
+## LATEST 
+Some Python code is updated to match the TensorFlow 2 (the original code was written for TensorFlow 1). See Prerequisites for detailed information about how to start. 
+
 ## Introduction
 
 An approach based on a convolutional neural network (CNN) is proposed to enhance coded (i.e., encoded and decoded) speech by utilizing cepstral domain features. The quality of coded speech can be enhanced and thus achieves improved quality without modifing the codec (i.e., encoder and decoder) itself.
 
-## Prerequisites
+## Prerequisites and Installation
 
-- [Python](https://www.python.org/) 2 or 3
-- [Anaconda](https://anaconda.org/anaconda/python)
-- CPU or NVIDIA GPU + [CUDA CuDNN](https://developer.nvidia.com/cudnn)
+ - Nvidia GPU with CUDA and CuDNN (the code is tested with CUDA version 11.4)
+ - Install [Anaconda](https://www.anaconda.com/)
+ - Start Anaconda Prompt
+ - Create a new environment and activate: `conda create -n tf-gpu-new python=3.8.5`, `conda activate tf-gpu-new`
+ - Install TensorFlow-GPU and Scipy:`pip install -r tensorflow-gpu==2.4.1`, `pip install -r scipy`
+ - Install [Matlab](https://www.mathworks.com/) (the code is tested with MATLAB 2016 and later)
 
 ## Getting Started
-
-### Installation
-
-- Install [TensorFlow](https://www.tensorflow.org/) and [Keras](https://www.tensorflow.org/)
-- Install [Matlab](https://www.mathworks.com/)
 
 ### Testing with the provided CNN model
 
