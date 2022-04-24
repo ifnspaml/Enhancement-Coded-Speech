@@ -10,7 +10,7 @@
 #####################################################################################
 
 
-import os
+""" import os
 import tensorflow as tf
 from keras.engine.topology import Layer
 from keras.models import Model
@@ -25,14 +25,28 @@ from numpy import random
 import scipy.io as sio
 from sklearn import preprocessing
 import math
-import time
+import time """
 
+
+import os
+import time
+import numpy as np
+from numpy import random
+import scipy.io as sio
+import h5py as h5
+import scipy.io.wavfile as swave
+import tensorflow as tf
+import tensorflow.keras as K
+from tensorflow.keras.models import Model, load_model, save_model 
+from tensorflow.keras.optimizers import Adam
+from tensorflow.keras.layers import Input, Add, Activation, LeakyReLU, Conv1D, MaxPooling1D, UpSampling1D
+from tensorflow.keras.callbacks import ReduceLROnPlateau, CSVLogger, EarlyStopping, ModelCheckpoint, LearningRateScheduler
 
 def snr(y_true, y_pred):
     """
         SNR is Signal to Noise Ratio
     """
-    return 10.0 * K.log((K.sum(K.square(y_true))) / (K.sum(K.square(y_pred - y_true)))) / K.log(10.0)
+    return 10.0 * tf.math.log((tf.math.reduce_sum(tf.math.square(y_true))) / (tf.math.reduce_sum(tf.math.square(y_pred - y_true)))) / tf.math.log(10.0)
 
 #####################################################################################
 # 0. Setup
@@ -141,7 +155,7 @@ decoded = Conv1D(1, N_cnn, padding='same', activation='linear')(m2)
 model = Model(input_vec, decoded)
 model.summary()
 
-adam = optimizers.Adam(lr=learning_rate, beta_1=0.9, beta_2=0.999, epsilon=1e-08)
+adam = Adam(lr=learning_rate, beta_1=0.9, beta_2=0.999, epsilon=1e-08)
 model.compile(optimizer=adam, loss='mse', metrics=[snr])
 
 #####################################################################################
@@ -149,19 +163,19 @@ model.compile(optimizer=adam, loss='mse', metrics=[snr])
 #####################################################################################
 
 # Stop criteria
-stop_str = cbs.EarlyStopping(monitor='val_loss', patience=16, verbose=1, mode='min')
+stop_str = EarlyStopping(monitor='val_loss', patience=16, verbose=1, mode='min')
 # Reduce learning rate
-reduce_LR = cbs.ReduceLROnPlateau(monitor='val_loss', factor=0.5, patience=2, verbose=1, mode='min', epsilon=0.0001, cooldown=0, min_lr=0)
+reduce_LR = ReduceLROnPlateau(monitor='val_loss', factor=0.5, patience=2, verbose=1, mode='min', epsilon=0.0001, cooldown=0, min_lr=0)
 # Save only best weights
 best_weights = "./data/cnn_weights_ceps_g711_example.h5"
 best_weights = os.path.normcase(best_weights)
-model_save = cbs.ModelCheckpoint(best_weights, monitor='val_loss', save_best_only=True, mode='min', save_weights_only=True, period=1)
+model_save = ModelCheckpoint(best_weights, monitor='val_loss', save_best_only=True, mode='min', save_weights_only=True, period=1)
 
 start = time.time()
 print("> Training model " + "using Batch-size: " + str(batch_size) + ", Learning_rate: " + str(learning_rate) + "...")
-hist = model.fit(x_train_noisy, x_train, epochs=nb_epochs, batch_size=batch_size, shuffle=True, initial_epoch=0,
+hist = model.fit(x=x_train_noisy, y=x_train, epochs=nb_epochs, batch_size=batch_size, shuffle=True, initial_epoch=0,
                       callbacks=[reduce_LR, stop_str, model_save],
-                      validation_data=[x_train_noisy_vali, x_train_vali]
+                      validation_data=(x_train_noisy_vali, x_train_vali)
                       )
 
 print("> Saving Completed, Time : ", time.time() - start)

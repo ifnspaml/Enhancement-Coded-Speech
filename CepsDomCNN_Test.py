@@ -8,7 +8,7 @@
 #####################################################################################
 
 
-import os
+""" import os
 from keras.models import Model
 from keras.engine.topology import Layer
 from keras.layers import Input, Add, Multiply, Average, Activation, LeakyReLU
@@ -26,14 +26,29 @@ from sklearn import preprocessing
 from weightnorm import AdamWithWeightnorm
 from tensorflow.python.framework import ops
 import math
-import time
+import time """
+
+
+import os
+import numpy as np
+import scipy.io as sio
+import h5py as h5
+import scipy.io.wavfile as swave
+import tensorflow as tf
+import tensorflow.keras as K
+from tensorflow.keras.models import Model, load_model, save_model 
+from tensorflow.keras.optimizers import Adam
+from tensorflow.keras.layers import Input, Add, Activation, LeakyReLU, Conv1D, MaxPooling1D, UpSampling1D
+from tensorflow.keras.callbacks import ReduceLROnPlateau, CSVLogger, EarlyStopping, ModelCheckpoint, LearningRateScheduler
+
+
 
 
 def snr(y_true, y_pred):
     """
         SNR is Signal to Noise Ratio
     """
-    return 10.0 * K.log((K.sum(K.square(y_true))) / (K.sum(K.square(y_pred - y_true)))) / K.log(10.0)
+    return 10.0 * tf.math.log((tf.math.reduce_sum(tf.math.square(y_true))) / (tf.math.reduce_sum(tf.math.square(y_pred - y_true)))) / tf.math.log(10.0)
 
 #####################################################################################
 # 0. Setup
