@@ -6,7 +6,7 @@
 %         2- Coded speech for test: exapmle_s1_g711_coded.raw and         %
 %            exapmle_s2_g711_coded.raw                                    %
 %   Output: 
-%         1- CNN input vector: type_3_cnn_input_ceps_v73.mat              %
+%         1- CNN input vector: type_3_cnn_input_ceps.mat              %
 %         2- Residual cepstral coefficients vector: type_3_ceps_resi.mat  %
 %         3- Phase angel vector: type_3_pha_ang.mat                       %
 
@@ -72,7 +72,7 @@ for k=1:size(inputTestSet,1)
     inputTestNorm(k,:) = (inputTestSet(k,:) - mean_of_every_dim)./std_of_every_dim;
 end
 % - CNN input and two more vectors need to be stored
-save('./data/type_3_cnn_input_ceps_v73.mat','inputTestNorm','-v7.3'); 
+save('./data/type_3_cnn_input_ceps.mat','inputTestNorm'); 
 save('./data/type_3_ceps_resi.mat','ceps_resi');
 save('./data/type_3_pha_ang.mat','ang_mat');
 

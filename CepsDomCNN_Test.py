@@ -1,7 +1,7 @@
 #####################################################################################
 # Use the trained CNN for cepstral domain approach III.
 # Input:
-#       1- CNN input: type_3_cnn_input_ceps_v73.mat
+#       1- CNN input: type_3_cnn_input_ceps.mat
 #       2- Trained CNN weights: cnn_weights_ceps_g711_best.h5
 # Output:
 #       1- CNN output: type_3_cnn_output_ceps.mat
@@ -109,13 +109,11 @@ model.load_weights("./data/cnn_weights_ceps_g711_best.h5")
 
 print('> Loading Test data ... ')
 
-mat_input = "./data/type_3_cnn_input_ceps_v73.mat"
+mat_input = "./data/type_3_cnn_input_ceps.mat"
 mat_input = os.path.normcase(mat_input)
-
-x_test_noisy = h5.File(mat_input, 'r')
-x_test_noisy = x_test_noisy.get('inputTestNorm')
+x_test_noisy = sio.loadmat(mat_input)
+x_test_noisy = x_test_noisy['inputTestNorm']
 x_test_noisy = np.array(x_test_noisy)
-x_test_noisy = np.transpose(x_test_noisy)
 x_test_noisy = np.reshape(x_test_noisy,(x_test_noisy.shape[0], x_test_noisy.shape[1], 1))
 
 predicted = model.predict(x_test_noisy)
